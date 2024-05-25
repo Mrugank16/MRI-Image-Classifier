@@ -1,5 +1,5 @@
 
-# Brain Image Classification Web Application
+# NeuroVision
 This project implements a web application for classifying brain images into different categories using convolutional neural networks (CNNs). It is built using Flask for the backend and Keras for the neural network model. The application allows users to upload brain images, preprocess them, and obtain predictions. The model achieved an accuracy of 85% on a test dataset containing 10,000 images.
 
 ## Technologies Used

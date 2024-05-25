@@ -26,10 +26,11 @@ body {
     background-size: 65px 65px;
 }
 
-img{
+img {
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image horizontally */
     height: 256px;
     width: 256px;
-    background-color: red;
 }
 
 h1 {
@@ -39,12 +40,14 @@ h1 {
     color: #ffffff; /* Change text color for better readability */
 }
 
-p{
+p {
     text-align: center;
     font-size: 25px;
     height: 50px;
+    line-height: 50px; /* Center vertically */
     width: 250px;
     background-color: red;
+    margin: 0 auto; /* Center horizontally */
 }
 
 form {

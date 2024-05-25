@@ -4,14 +4,64 @@
     <meta charset="UTF-8">
     <title>Brain Image Classification</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Brain Image Classification</h1>
-        <form action="/predict" method="post" enctype="multipart/form-data">
-            <input type="file" name="file">
+        <img id="uploadedImage" alt="Uploaded Image">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="file" id="fileInput">
             <button type="submit" value="predict">Predict</button>
         </form>
+        <h1>Result</h1>
+        <p id="result">{{ prediction }}</p>
     </div>
+
+    <script>
+        // Function to set default image
+        function setDefaultImage() {
+            document.getElementById('uploadedImage').src = 'static/brain.jpg';
+        }
+    
+        // Call the function to set default image when the page loads
+        window.onload = function() {
+            setDefaultImage();
+        };
+    
+        // Event listener for file input change
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var uploadedImage = document.getElementById('uploadedImage');
+            var reader = new FileReader();
+    
+            reader.onload = function(e) {
+                uploadedImage.src = e.target.result;
+            }
+    
+            reader.readAsDataURL(file);
+        });
+    
+        // Event listener for form submission
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+    
+            // Fetch prediction
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.prediction;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'Invalid image';
+            });
+        });
+    </script>
+    
 </body>
 </html>

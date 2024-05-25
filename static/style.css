@@ -1,25 +1,50 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    background-image: url('path_to_your_brain_image.jpg');
-    background-size: cover;
-    background-position: center;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow: hidden;
 }
 
 .container {
     max-width: 600px;
+    height: 500px;
     margin: 100px auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.8); /* Add opacity for better readability */
+
+    /* Add your background pattern here */
+    background-image: repeating-radial-gradient(  #0c0a0a 80%,#2f312f 90%,#3f4549 90%);
+    background-size: 65px 65px;
+}
+
+img{
+    height: 256px;
+    width: 256px;
+    background-color: red;
 }
 
 h1 {
     text-align: center;
-    color: #333; /* Change text color for better readability */
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Change text color for better readability */
+}
+
+p{
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+    width: 250px;
+    background-color: red;
 }
 
 form {

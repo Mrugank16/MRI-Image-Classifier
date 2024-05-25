@@ -14,8 +14,8 @@ body {
 
 .container {
     max-width: 600px;
-    height: 500px;
-    margin: 100px auto;
+    height: 550px;
+    margin: 70px auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -31,28 +31,33 @@ img {
     margin: 0 auto; /* Center the image horizontally */
     height: 256px;
     width: 256px;
+    border: 2px solid #ffffff;
 }
 
 h1 {
     text-align: center;
     font-size: 45px;
     margin-bottom: 10px;
-    color: #ffffff; /* Change text color for better readability */
+    color: #ffffff;
+    margin: 15px;
 }
 
 p {
     text-align: center;
     font-size: 25px;
     height: 50px;
-    line-height: 50px; /* Center vertically */
+    line-height: 50px; 
     width: 250px;
-    background-color: red;
-    margin: 0 auto; /* Center horizontally */
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto; 
+    border: 2px solid #ffffff;
 }
 
 form {
+    display: flex;
     text-align: center;
     margin-top: 20px;
+    justify-content: space-evenly;
 }
 
 input[type="file"] {
@@ -65,12 +70,29 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+.btn{
+    margin: 0 10px 0px 10px;
+    display: block;
+    font-family: 'Roboto';
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+}
+
+/*
 input[type="file"]::-webkit-file-upload-button {
     background-color: #007bff;
     color: #fff;
@@ -81,5 +103,33 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #0056b3;
+}
+*/
+
+
+/* Hide the default file input text */
+input[type="file"] {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Style the label for the file input */
+.custom-file-upload {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
     background-color: #0056b3;
 }

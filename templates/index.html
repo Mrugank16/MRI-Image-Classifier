@@ -11,8 +11,12 @@
         <h1>Brain Image Classification</h1>
         <img id="uploadedImage" alt="Uploaded Image">
         <form id="uploadForm" enctype="multipart/form-data">
+            <!-- Replace the default file input with a label -->
+            <label for="fileInput" class="custom-file-upload btn" >Upload Image</label>
             <input type="file" name="file" id="fileInput">
-            <button type="submit" value="predict">Predict</button>
+
+            <button type="submit" value="predict" class="btn">Predict</button>
+            <button type="button" id="resetBtn" class="btn">Reset</button>
         </form>
         <h1>Result</h1>
         <p id="result">{{ prediction }}</p>
@@ -60,6 +64,16 @@
                 console.error('Error:', error);
                 document.getElementById('result').innerText = 'Invalid image';
             });
+        });
+    
+        // Event listener for reset button
+        document.getElementById('resetBtn').addEventListener('click', function(event) {
+            // Reset form fields
+            document.getElementById('uploadForm').reset();
+            // Reset uploaded image to default
+            setDefaultImage();
+            // Clear result text
+            document.getElementById('result').innerText = '';
         });
     </script>
     

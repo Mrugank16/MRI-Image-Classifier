@@ -14,6 +14,3 @@ Install the required dependencies using pip install -r requirements.txt.
 Run the Flask application using python app.py.
 Open a web browser and navigate to http://localhost:5000.
 Upload a brain image using the provided form and click the predict button to obtain classification results.
-
-
-

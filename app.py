@@ -32,9 +32,9 @@ def predict():
 
     # Check the prediction value
     if predictions[0][0] > 0.5:
-        output = "coronal"
+        output = "Coronal"
     else:
-        output = "axial"
+        output = "Axial"
 
     return jsonify({'prediction': output})
 
